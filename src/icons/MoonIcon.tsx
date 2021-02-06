@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export const MoonIcon: React.FC = () => {
+export const MoonIcon: React.VoidFunctionComponent = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
       <path
