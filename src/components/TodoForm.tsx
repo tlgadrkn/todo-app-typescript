@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const TodoForm: React.VoidFunctionComponent = () => {
+const TodoForm: React.FC = () => {
   return <h1>todoform</h1>
 }
 

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {MoonIcon} from '../icons/MoonIcon'
 
-const Header: React.VoidFunctionComponent = () => {
+const Header: React.FC = () => {
   return (
     <div className="App-header">
       <MoonIcon />
