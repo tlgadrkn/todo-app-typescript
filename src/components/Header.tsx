@@ -1,7 +1,9 @@
 import * as React from 'react'
 import {MoonIcon} from '../icons/MoonIcon'
+import {SunIcon} from '../icons/SunIcon'
 import {TodoForm} from './TodoForm'
 import img from '../assets/images/bg-desktop-light.jpg'
+
 const Header: React.FC = () => {
   return (
     <div
