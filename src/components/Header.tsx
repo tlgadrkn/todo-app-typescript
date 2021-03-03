@@ -21,7 +21,7 @@ const Header: React.FC<Props> = ({theme}) => {
         </h1>
         <button>{theme === 'light' ? <MoonIcon /> : <SunIcon />}</button>
       </div>
-      <div className="p-4 flex flex-row justify-center h-16 w-1/2 mx-auto bg-white rounded">
+      <div className="p-3 flex flex-row justify-center h-16 w-1/2 mx-auto bg-white rounded">
         <TodoForm />
       </div>
     </div>

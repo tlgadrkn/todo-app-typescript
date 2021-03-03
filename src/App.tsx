@@ -7,7 +7,7 @@ const App: React.FC = () => {
   const [theme, setTheme] = useTheme()
 
   return (
-    <div className="container box-border">
+    <div className="box-border">
       <div className="mx-auto">
         <Header theme={theme!} />
       </div>
