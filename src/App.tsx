@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Header from './components/Header'
+import TodoBody from './components/TodoBody'
 
 import {useTheme} from './hooks/useTheme'
 const App: React.FC = () => {
@@ -10,7 +11,8 @@ const App: React.FC = () => {
       <div className="mx-auto">
         <Header theme={theme!} />
       </div>
-      <div>body</div>
+
+      <TodoBody />
     </div>
   )
 }
