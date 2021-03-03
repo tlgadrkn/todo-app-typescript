@@ -3,12 +3,12 @@ import Header from './components/Header'
 
 import {useTheme} from './hooks/useTheme'
 const App: React.FC = () => {
-  const theme = useTheme()
+  const [theme, setTheme] = useTheme()
 
   return (
     <div className="container box-border">
       <div className="mx-auto">
-        <Header />
+        <Header theme={theme!} />
       </div>
       <div>body</div>
     </div>
