@@ -7,11 +7,10 @@ import bgDark from '../assets/images/bg-desktop-dark.jpg'
 interface Props {
   theme: string
   handleThemeChange: React.Dispatch<React.SetStateAction<'light' | 'dark'>>
+  addTodo: React.Dispatch<React.SetStateAction<object>>
 }
 
-const Header: React.FC<Props> = ({theme, handleThemeChange}) => {
-  console.log(theme)
-
+const Header: React.FC<Props> = ({theme, handleThemeChange, addTodo}) => {
   return (
     <div
       className="flex-none justify-center bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 header w-screen h-72 bg-no-repeat bg-cover dark:bg-black"
@@ -33,7 +32,7 @@ const Header: React.FC<Props> = ({theme, handleThemeChange}) => {
         </button>
       </div>
       <div className="p-3 flex flex-row justify-center h-16 w-1/2 mx-auto bg-white rounded">
-        <TodoForm />
+        <TodoForm addTodo={addTodo} />
       </div>
     </div>
   )
