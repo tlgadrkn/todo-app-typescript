@@ -9,7 +9,7 @@ const App: React.FC = () => {
   return (
     <div className="box-border">
       <div className="mx-auto">
-        <Header theme={theme!} />
+        <Header theme={theme} handleThemeChange={setTheme} />
       </div>
 
       <TodoBody />
