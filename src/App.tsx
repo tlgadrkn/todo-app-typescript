@@ -5,7 +5,7 @@ import {useTheme} from './hooks/useTheme'
 
 interface Todos {
   todos?: {
-    all: string[]
+    all?: string[]
     completed?: string[]
     incompleted?: string[]
     active?: string[]
@@ -31,8 +31,7 @@ const App: React.FC<Todos> = () => {
       <div className="mx-auto">
         <Header theme={theme} handleThemeChange={setTheme} addTodo={setState} />
       </div>
-
-      <TodoBody />
+      <TodoBody todos={state} />
     </div>
   )
 }

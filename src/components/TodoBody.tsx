@@ -1,12 +1,19 @@
 import * as React from 'react'
 import TodoList from './TodoList'
-interface Props {}
 
-const TodoBody: React.FC<Props> = () => {
+interface Todos {
+  todos: {
+    all?: string[]
+    completed?: string[]
+    incompleted?: string[]
+    active?: string[]
+  }
+}
+const TodoBody: React.FC<Todos> = ({todos}) => {
   return (
     <div className="d-flex container w-1/2 border rounded -m-10 mx-auto bg-white">
       BODY
-      <TodoList />
+      <TodoList todos={todos} />
       <div className="d-flex flex-row">
         <div className="d-flex justify-items-center justify-between">
           <span>2 items left</span>
