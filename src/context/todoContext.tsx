@@ -1,10 +1,10 @@
 import * as React from 'react'
-type Todo = {
+export type Todo = {
   id: number
   text: string
   active: boolean
 }
-type State = {
+export type State = {
   todos: Array<Todo>
 }
 type Action = {type: 'add_todo'; payload: Todo}
@@ -13,13 +13,7 @@ type Dispatch = (action: Action) => void
 type TodoProviderProps = {children: React.ReactNode}
 
 const initialState: State = {
-  todos: [
-    {
-      id: 1,
-      text: 'string',
-      active: true,
-    },
-  ],
+  todos: [],
 }
 
 const TodoContext = React.createContext<

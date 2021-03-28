@@ -1,11 +1,10 @@
 import React from 'react'
-import {Todos as TodoStateInterface} from '../App'
+import {State} from '../context/todoContext'
 
-const TodoList: React.FC<TodoStateInterface> = props => {
-  const {todos} = props
+const TodoList: React.FC<State> = ({todos}) => {
   console.log(todos)
 
-  return <>{todos.all.length > 0 ? <p>TODOS</p> : <p>NO TODOS TO SHOW</p>}</>
+  return <>{todos.length > 0 ? <p>TODOS</p> : <p>NO TODOS TO SHOW</p>}</>
 }
 
 export default TodoList

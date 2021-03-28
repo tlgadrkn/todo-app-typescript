@@ -4,7 +4,6 @@ import {SunIcon} from '../../icons/SunIcon'
 import {TodoForm} from '../TodoForm'
 import bgLight from '../../assets/images/bg-desktop-light.jpg'
 import bgDark from '../../assets/images/bg-desktop-dark.jpg'
-import {Todos as TodoStateInterface} from '../../App'
 
 interface Props {
   theme: string
