@@ -4,20 +4,22 @@ import {State} from '../context/todoContext'
 
 const TodoBody: React.FC<State> = ({todos}) => {
   return (
-    <div className="d-flex container w-1/2 border rounded -m-10 mx-auto bg-white">
-      BODY
+    <div className="flex container flex-col w-1/2 border rounded -m-10 mx-auto bg-white">
       <TodoList todos={todos} />
-      <div className="d-flex flex-row">
-        <div className="d-flex justify-items-center justify-between">
+      <div className="flex flex-row">
+        <div className="flex justify-items-center justify-between">
           {todos.length > 0 ? (
             <span>{todos.length} items left</span>
           ) : (
             <span>No items left</span>
           )}
-          <button>All</button>
-          <button>Active</button>
-          <button>Completed</button>
-          <button>Clear Completed</button>
+
+          <div>
+            <button>All</button>
+            <button>Active</button>
+            <button>Completed</button>
+            <button>Clear Completed</button>
+          </div>
         </div>
       </div>
     </div>

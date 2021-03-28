@@ -9,12 +9,9 @@ export const TodoForm: React.FC = props => {
       '#todoInput',
     )
     const value: string | undefined = $inputEl?.value
-    if ($inputEl) {
+    if (value && $inputEl) {
       $inputEl.value = ''
-      console.log(value)
-      console.log(dispatch)
       dispatch({type: 'add_todo', payload: value})
-      // ADD Todo
     }
   }
   return (

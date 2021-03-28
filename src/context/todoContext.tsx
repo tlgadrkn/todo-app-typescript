@@ -15,7 +15,13 @@ export type Dispatch = (action: Action) => void
 type TodoProviderProps = {children: React.ReactNode}
 
 const initialState: State = {
-  todos: [],
+  todos: [
+    {
+      id: 5625,
+      text: 'My First Todo List Item',
+      active: true,
+    },
+  ],
 }
 
 const TodoContext = React.createContext<
