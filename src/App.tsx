@@ -1,20 +1,20 @@
 import * as React from 'react'
-import Header from './components/Header'
+import Header from './components/Header/Header'
 import TodoBody from './components/TodoBody'
 import {useTheme} from './hooks/useTheme'
 
-interface Todos {
-  todos?: {
-    all?: string[]
+export interface Todos {
+  todos: {
+    all: string[]
     completed?: string[]
     incompleted?: string[]
     active?: string[]
   }
 }
 
-const App: React.FC<Todos> = () => {
+const App: React.FC = () => {
   const [state, setState] = React.useState(() => {
-    const todos: {} = {
+    const todos: Todos = {
       todos: {
         all: [],
         completed: [],
@@ -29,9 +29,9 @@ const App: React.FC<Todos> = () => {
   return (
     <div className="box-border">
       <div className="mx-auto">
-        <Header theme={theme} handleThemeChange={setTheme} addTodo={setState} />
+        <Header theme={theme} handleThemeChange={setTheme} />
       </div>
-      <TodoBody todos={state} />
+      <TodoBody {...state} />
     </div>
   )
 }

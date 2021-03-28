@@ -1,9 +1,7 @@
 import * as React from 'react'
-
 interface Props {
-  addTodo: React.Dispatch<React.SetStateAction<object>>
+  addTodo?: React.Dispatch<React.SetStateAction<'light' | 'dark'>>
 }
-
 export const TodoForm: React.FC<Props> = ({addTodo}) => {
   function handleFormSubmit(event: React.SyntheticEvent) {
     event.preventDefault()
@@ -13,8 +11,7 @@ export const TodoForm: React.FC<Props> = ({addTodo}) => {
     const value: string | undefined = $inputEl?.value
     if ($inputEl) {
       $inputEl.value = ''
-      // change this to real
-      addTodo({value})
+      // ADD Todo
     }
   }
   return (

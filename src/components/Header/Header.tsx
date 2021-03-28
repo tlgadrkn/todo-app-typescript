@@ -1,16 +1,18 @@
 import * as React from 'react'
-import {MoonIcon} from '../icons/MoonIcon'
-import {SunIcon} from '../icons/SunIcon'
-import {TodoForm} from './TodoForm'
-import bgLight from '../assets/images/bg-desktop-light.jpg'
-import bgDark from '../assets/images/bg-desktop-dark.jpg'
+import {MoonIcon} from '../../icons/MoonIcon'
+import {SunIcon} from '../../icons/SunIcon'
+import {TodoForm} from '../TodoForm'
+import bgLight from '../../assets/images/bg-desktop-light.jpg'
+import bgDark from '../../assets/images/bg-desktop-dark.jpg'
+import {Todos as TodoStateInterface} from '../../App'
+
 interface Props {
   theme: string
   handleThemeChange: React.Dispatch<React.SetStateAction<'light' | 'dark'>>
-  addTodo: React.Dispatch<React.SetStateAction<object>>
+  // addTodo: React.Dispatch<React.SetStateAction<TodoStateInterface>>
 }
 
-const Header: React.FC<Props> = ({theme, handleThemeChange, addTodo}) => {
+const Header: React.FC<Props> = ({theme, handleThemeChange, ...props}) => {
   return (
     <div
       className="flex-none justify-center bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 header w-screen h-72 bg-no-repeat bg-cover dark:bg-black"
@@ -32,7 +34,7 @@ const Header: React.FC<Props> = ({theme, handleThemeChange, addTodo}) => {
         </button>
       </div>
       <div className="p-3 flex flex-row justify-center h-16 w-1/2 mx-auto bg-white rounded">
-        <TodoForm addTodo={addTodo} />
+        <TodoForm {...props} />
       </div>
     </div>
   )

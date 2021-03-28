@@ -1,15 +1,8 @@
 import * as React from 'react'
 import TodoList from './TodoList'
-
-interface Todos {
-  todos: {
-    all?: string[]
-    completed?: string[]
-    incompleted?: string[]
-    active?: string[]
-  }
-}
-const TodoBody: React.FC<Todos> = ({todos}) => {
+import {Todos as TodoStateInterface} from '../App'
+const TodoBody: React.FC<TodoStateInterface> = props => {
+  const {todos} = props
   return (
     <div className="d-flex container w-1/2 border rounded -m-10 mx-auto bg-white">
       BODY
