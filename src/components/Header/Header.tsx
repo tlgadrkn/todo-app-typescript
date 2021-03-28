@@ -32,7 +32,7 @@ const Header: React.FC<Props> = ({theme, handleThemeChange, ...props}) => {
         </button>
       </div>
       <div className="p-3 flex flex-row justify-center h-16 w-1/2 mx-auto bg-white rounded">
-        <TodoForm {...props} />
+        <TodoForm />
       </div>
     </div>
   )

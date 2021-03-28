@@ -1,19 +1,19 @@
 import * as React from 'react'
 import TodoList from './TodoList'
-import {useTodoContext} from '../context/todoContext'
 import {State} from '../context/todoContext'
 
-const TodoBody: React.FC = props => {
-  const {state} = useTodoContext()
-  console.log(state)
-
+const TodoBody: React.FC<State> = ({todos}) => {
   return (
     <div className="d-flex container w-1/2 border rounded -m-10 mx-auto bg-white">
       BODY
-      <TodoList todos={state.todos} />
+      <TodoList todos={todos} />
       <div className="d-flex flex-row">
         <div className="d-flex justify-items-center justify-between">
-          <span>2 items left</span>
+          {todos.length > 0 ? (
+            <span>{todos.length} items left</span>
+          ) : (
+            <span>No items left</span>
+          )}
           <button>All</button>
           <button>Active</button>
           <button>Completed</button>

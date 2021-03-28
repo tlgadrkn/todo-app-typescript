@@ -3,15 +3,15 @@ import {todoReducer} from '../reducers/todoReducer'
 
 export type Todo = {
   id: number
-  text: string
+  text: string | undefined
   active: boolean
 }
 export type State = {
   todos: Array<Todo>
 }
-export type Action = {type: 'add_todo'; payload: Todo}
+export type Action = {type: 'add_todo'; payload: string | undefined}
 
-type Dispatch = (action: Action) => void
+export type Dispatch = (action: Action) => void
 type TodoProviderProps = {children: React.ReactNode}
 
 const initialState: State = {

@@ -2,20 +2,20 @@ import * as React from 'react'
 import Header from './components/Header/Header'
 import TodoBody from './components/TodoBody'
 import {useTheme} from './hooks/useTheme'
-import {TodoProvider} from './context/todoContext'
+import {useTodoContext} from './context/todoContext'
 
 const App: React.FC = () => {
+  const {state, dispatch} = useTodoContext()
   const [theme, setTheme] = useTheme()
+  console.log(state)
 
   return (
-    <TodoProvider>
-      <div className="box-border">
-        <div className="mx-auto">
-          <Header theme={theme} handleThemeChange={setTheme} />
-        </div>
-        <TodoBody />
+    <div className="box-border">
+      <div className="mx-auto">
+        <Header theme={theme} handleThemeChange={setTheme} />
       </div>
-    </TodoProvider>
+      <TodoBody todos={state.todos} />
+    </div>
   )
 }
 

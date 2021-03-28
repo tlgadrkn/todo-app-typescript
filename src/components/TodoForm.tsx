@@ -1,8 +1,8 @@
 import * as React from 'react'
-interface Props {
-  addTodo?: React.Dispatch<React.SetStateAction<'light' | 'dark'>>
-}
-export const TodoForm: React.FC<Props> = ({addTodo}) => {
+import {useTodoContext} from '../context/todoContext'
+export const TodoForm: React.FC = props => {
+  const {dispatch} = useTodoContext()
+
   function handleFormSubmit(event: React.SyntheticEvent) {
     event.preventDefault()
     const $inputEl: HTMLInputElement | null = window.document.querySelector(
@@ -11,6 +11,9 @@ export const TodoForm: React.FC<Props> = ({addTodo}) => {
     const value: string | undefined = $inputEl?.value
     if ($inputEl) {
       $inputEl.value = ''
+      console.log(value)
+      console.log(dispatch)
+      dispatch({type: 'add_todo', payload: value})
       // ADD Todo
     }
   }
