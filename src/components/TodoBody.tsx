@@ -4,7 +4,7 @@ import {useTodoContext} from '../context/todoContext'
 import {State} from '../context/todoContext'
 
 const TodoBody: React.FC = props => {
-  const {state, dispatch} = useTodoContext()
+  const {state} = useTodoContext()
   console.log(state)
 
   return (

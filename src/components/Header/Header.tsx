@@ -8,7 +8,6 @@ import bgDark from '../../assets/images/bg-desktop-dark.jpg'
 interface Props {
   theme: string
   handleThemeChange: React.Dispatch<React.SetStateAction<'light' | 'dark'>>
-  // addTodo: React.Dispatch<React.SetStateAction<TodoStateInterface>>
 }
 
 const Header: React.FC<Props> = ({theme, handleThemeChange, ...props}) => {

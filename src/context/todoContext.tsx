@@ -1,4 +1,6 @@
 import * as React from 'react'
+import {todoReducer} from '../reducers/todoReducer'
+
 export type Todo = {
   id: number
   text: string
@@ -7,7 +9,7 @@ export type Todo = {
 export type State = {
   todos: Array<Todo>
 }
-type Action = {type: 'add_todo'; payload: Todo}
+export type Action = {type: 'add_todo'; payload: Todo}
 
 type Dispatch = (action: Action) => void
 type TodoProviderProps = {children: React.ReactNode}
@@ -19,18 +21,6 @@ const initialState: State = {
 const TodoContext = React.createContext<
   {state: State; dispatch: Dispatch} | undefined
 >(undefined)
-
-function todoReducer(state: State, action: Action): State {
-  switch (action.type) {
-    case 'add_todo':
-      return {
-        ...state,
-        todos: [...state.todos, action.payload],
-      }
-    default:
-      throw new Error(`Unhandled Action Type ${action.type}`)
-  }
-}
 
 function TodoProvider({children}: TodoProviderProps) {
   const [state, dispatch] = React.useReducer(todoReducer, initialState)
